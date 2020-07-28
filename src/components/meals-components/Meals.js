@@ -1,15 +1,27 @@
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
+=======
+import Spinner from 'react-bootstrap/Spinner';
+
+>>>>>>> 6bef46ec21ae7946c6a154846a02a14df939cf30
 import moment from 'moment';
 import React from 'react';
 import { useGlobalState } from '../../config/store';
 
 const Meals = () => {
 	const { store } = useGlobalState();
-	const { meals } = store;
-
+  const { meals } = store;
+  
+  if (!meals) {
+    return (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    )
+  }
 	const headings = {
 		title: { heading: 'Title' },
 		description: { heading: 'Description' },
@@ -40,7 +52,7 @@ const Meals = () => {
 							<tr key={meal._id}>
 								<td>{index + 1}</td>
 								{Object.keys(headings).map((heading) => (
-									<td>
+                  <td key={`${meal._id}${index}${heading}`}>
 										{headings[heading].type === 'date' ? (
 											moment(meal[heading]).format('MMMM Do YYYY, h:mm a')
 										) : (
