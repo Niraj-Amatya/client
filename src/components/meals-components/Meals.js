@@ -1,7 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
-
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import React from 'react';
 import { useGlobalState } from '../../config/store';
@@ -20,6 +20,9 @@ const Meals = () => {
 		orderEnds: { heading: 'Order Ends', type: 'date' },
 		maxOrders: { heading: 'Max Orders' }
 	};
+
+
+
 	return (
 		<Container>
 			<Row className="justify-content-center">
@@ -44,6 +47,18 @@ const Meals = () => {
 										)}
 									</td>
 								))}
+
+								<td>
+									{moment(meal.orderStarts).isAfter(moment()) ? (
+										<>
+										<Link to={`/meals/${meal._id}`}>View</Link>
+										<Link to={`/meals/edit/${meal._id}`}>/Edit</Link>
+										
+										</>
+									) : (
+										<Link to={`/meals/${meal._id}`}>View</Link>
+									)}
+								</td>
 							</tr>
 						))}
 					</tbody>
