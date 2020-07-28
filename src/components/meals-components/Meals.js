@@ -1,12 +1,9 @@
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
-<<<<<<< HEAD
-import { Link } from 'react-router-dom';
-=======
 import Spinner from 'react-bootstrap/Spinner';
+import {Link} from 'react-router-dom'
 
->>>>>>> 6bef46ec21ae7946c6a154846a02a14df939cf30
 import moment from 'moment';
 import React from 'react';
 import { useGlobalState } from '../../config/store';
