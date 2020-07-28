@@ -18,7 +18,8 @@ const Meals = () => {
 		deliversOn: { heading: 'Delivers On', type: 'date' },
 		orderStarts: { heading: 'Order Starts', type: 'date' },
 		orderEnds: { heading: 'Order Ends', type: 'date' },
-		maxOrders: { heading: 'Max Orders' }
+		maxOrders: { heading: 'Max Orders' },
+		orders : {heading: 'Total Orders', type: 'number'}
 	};
 
 
