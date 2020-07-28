@@ -17,6 +17,7 @@ import Nav from './components/Nav';
 import OrderMeal from './components/order-components/OrderMeal';
 import ViewOrder from './components/order-components/ViewOrder';
 import EditOrder from './components/order-components/EditOrder';
+import Orders from './components/order-components/Orders';
 
 import ShowAlert from './components/ShowAlert';
 import AuthenticatedRoute from './components/auth-components/AuthenticatedRoute';
@@ -194,6 +195,12 @@ const App = () => {
 												updateOrder={updateOrder}
 											/>
 										)}
+									/>
+									<AuthenticatedRoute
+										exact
+										path="/orders"
+										redirectMsg="Please login to see your orders history"
+										component={Orders}
 									/>
 								</Switch>
 							</Col>
